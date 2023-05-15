@@ -1,0 +1,40 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "prepare": "husky install",
+    "start": "npx antm-doc-start",
+    "build": "npx antm-vantui-cli build"
+  },
+  "keywords": [
+    "antmjs",
+    "antd-max"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@antmjs/eslint": "^2.3.6",
+    "@antmjs/stylelint": "^2.3.6",
+    "@antmjs/types": "^2.3.6",
+    "@antmjs/vantui-cli": "^3.0.0",
+    "@antmjs/warning": "^2.3.6",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "all-contributors-cli": "^6.20.0",
+    "antd": "^5.4.7",
+    "antmjs-doc": "^0.0.4",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "dayjs": "^1.11.7",
+    "eslint": "8.12.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "react-router-dom": "^6.11.1",
+    "stylelint": "^14.11.0"
+  }
+}
