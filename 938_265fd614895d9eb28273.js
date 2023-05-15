@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkui=self.webpackChunkui||[]).push([[938],{1938:(e,b,n)=>{n.r(b),n.d(b,{default:()=>s});const s={"form-box":n.e(717).then(n.bind(n,7717)),"form-box__demo-base":n.e(346).then(n.bind(n,5346))}}}]);
