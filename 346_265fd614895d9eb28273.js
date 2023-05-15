@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkui=self.webpackChunkui||[]).push([[346],{5346:(u,e,a)=>{a.r(e),a.d(e,{default:()=>i});var h=a(5893);function i(){return(0,h.jsx)("div",{children:"haha"})}}}]);
