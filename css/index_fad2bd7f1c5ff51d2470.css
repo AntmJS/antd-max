@@ -115,7 +115,7 @@
 .antm-docs-markdown .card h3:hover svg {
   display: block !important;
 }
-.antm-docs-markdown .card svg {
+.antm-docs-markdown .card h3 svg {
   position: absolute;
   top: 45px;
   left: 8px;
@@ -398,7 +398,7 @@
   height: 0;
   overflow: hidden;
 }
-.demo-code-wrapper pre {
+.code-box pre {
   margin-top: 0;
 }
 .demo-code-box {
