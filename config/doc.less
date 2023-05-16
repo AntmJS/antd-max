@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-max-type */
 :root {
   --header-back-color: #4fc08d;
 }
@@ -5,4 +7,46 @@
 .antm-docs-header-nav .nav-text,
 .antm-docs-header-nav .nav-select {
   background-color: #ffffff;
+}
+
+.show-code-btn {
+  top: -11px;
+
+  svg path {
+    fill: #4fc08d;
+  }
+}
+
+.demo-code-wrapper .code-item pre,
+.demo-code-wrapper pre code {
+  background-color: #f3fff6 !important;
+}
+
+.demo-code-tabs .code-tab-name-active {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.demo-code-tabs {
+  background-color: #f3fff6 !important;
+  border-bottom: 2px dashed #d1dcd0;
+}
+
+.demo-code-wrapper .code-box {
+  position: relative;
+}
+
+.demo-code-wrapper pre {
+  max-height: 400px;
+  overflow: scroll;
+  position: static;
+}
+
+.demo-code-wrapper pre code {
+  font-size: 12px;
+  position: static;
+
+  &::after,
+  &::before {
+    top: 60px !important;
+  }
 }
