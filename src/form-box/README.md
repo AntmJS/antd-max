@@ -7,7 +7,7 @@
 ### 引用
 
 ```tsx
-import { FormMax } from '@antmjs/antd-max'
+import { FormBox } from '@antmjs/antd-max'
 ```
 
 ### 基本使用
@@ -20,9 +20,9 @@ import { FormMax } from '@antmjs/antd-max'
 
 ### 扩展组件
 
-通过`FormMax.register`方法来扩展组件
+通过`FormBox.register`方法来扩展组件
 
-如下重新定义`FormMax`, 扩展一个`imageUploader`图片上传组件
+如下重新定义`FormBox`, 扩展一个`imageUploader`图片上传组件
 
 然后就可以使用`imageUploader`图片上传组件
 
@@ -35,20 +35,20 @@ import { FormMax } from '@antmjs/antd-max'
 - validateTrigger： 设置字段校验的时机
 - valuePropName： 子节点的值的属性，如 Switch 的是 'checked'。该属性为 getValueProps 的封装，自定义 getValueProps 后会失效
 
-### IFormMaxProps
+### IFormBoxProps
 
-`FormMax<T>`组件的 props 类型说明如下
+`FormBox<T>`组件的 props 类型说明如下
 
 | 参数          | 说明                                    | 类型                     |
 | ------------- | --------------------------------------- | ------------------------ |
 | queryInit     | 用地址中的参数初始化表单                | `boolean`                |
-| config        | 表单渲染配置                            | `IFormMaxItemProps<T>[]` |
+| config        | 表单渲染配置                            | `IFormBoxItemProps<T>[]` |
 | actions       | 表单渲染配置, 继承 antd 的`ButtonProps` | `ButtonProps[]`          |
 | defaultValues | 表单初始化, 默认`false`                 | `T`                      |
 
-### IFormMaxItemProps
+### IFormBoxItemProps
 
-`config`的配置项`IFormMaxItemProps<T>`继承了[antd.FormItemProps](https://ant.design/components/form-cn#formitem) ,类型如下
+`config`的配置项`IFormBoxItemProps<T>`继承了[antd.FormItemProps](https://ant.design/components/form-cn#formitem) ,类型如下
 
 | 参数  | 说明                        | 类型                                                                                  |
 | ----- | --------------------------- | ------------------------------------------------------------------------------------- |
@@ -76,7 +76,7 @@ interface ButtonProps_<T> extends ButtonProps {
 
 ### IRegisterFormParams
 
-FormMax.`showComponents` 和 FormMax.`registerComponent` 的方法：
+FormBox.`showComponents` 和 FormBox.`registerComponent` 的方法：
 
 ```ts
 type IRegisterForm = (params: IRegisterFormParams) => void
