@@ -25,7 +25,7 @@ export default defineConfig({
     headerLinks: [
       {
         title: 'https://b.yzcdn.cn/vant/logo/github.svg',
-        url: 'https://github.com/AntmJS/antm/',
+        url: 'https://github.com/AntmJS/antd-max/',
         type: 'img',
       },
       {
