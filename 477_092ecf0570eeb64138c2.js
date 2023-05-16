@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_antmjs_antd_max=self.webpackChunk_antmjs_antd_max||[]).push([[477],{9477:(e,n,a)=>{a.r(n),a.d(n,{default:()=>s}),a(7294);var r=a(4935),t=a(5893),c=0;function s(e){return(0,t.jsx)(r.ZP,{theme:{token:{colorPrimary:"#54bf8e"}},children:e.children},"configProvider@".concat(c++))}}}]);
