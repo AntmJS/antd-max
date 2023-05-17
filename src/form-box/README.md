@@ -7,7 +7,7 @@
 ### 引用
 
 ```tsx
-import { FormBox } from '@antmjs/antd-max'
+import { FormBox } from 'antd-max'
 ```
 
 ### 基本使用
@@ -45,6 +45,7 @@ import { FormBox } from '@antmjs/antd-max'
 | config        | 表单渲染配置                            | `IFormBoxItemProps<T>[]` |
 | actions       | 表单渲染配置, 继承 antd 的`ButtonProps` | `ButtonProps[]`          |
 | defaultValues | 表单初始化, 默认`false`                 | `T`                      |
+| form          | 传入`FormBox.use()[0]`                  | `antd.FormInstance`      |
 
 ### IFormBoxItemProps
 
@@ -92,7 +93,3 @@ IRegisterFormParams 类型, 继承了[`antd.FormItem.Props`](https://ant.design/
 | transformValue        | 转换提交的时候的表单数据                          | `(fields: any) => any`          |
 | transformDefaultValue | 转换初始化的时候的 defaultValue                   | `(fields: any) => any`          |
 | transformProps        | 转换传给组件的参数, `formItemProps`目前只有 label | `(props, formItemProps) => any` |
-
-### FormInstance
-
-通过`useRef`和`ref`获取，与[`antd.FormInstance`](https://ant.design/components/form-cn#forminstance)保持一致

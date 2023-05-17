@@ -1,6 +1,6 @@
 {
-  "name": "@antmjs/antd-max",
-  "version": "0.0.0",
+  "name": "antd-max",
+  "version": "0.0.1-apha.1",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,11 +12,13 @@
     "prepare": "husky install",
     "start": "npx antm-doc-start",
     "ghpage": "npx antm-doc-build && npx gh-pages -d doc_build",
-    "build": "npx antm-vantui-cli build"
+    "build": "npx antm-vantui-cli build",
+    "dts": "npx tsc src/index.d.ts"
   },
   "keywords": [
     "antmjs",
-    "antd-max"
+    "antd-max",
+    "antd"
   ],
   "author": "",
   "license": "ISC",
@@ -30,7 +32,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "all-contributors-cli": "^6.20.0",
     "antd": "^5.4.7",
-    "antmjs-doc": "^0.0.4-apha.4",
+    "antmjs-doc": "^0.0.4-apha.6",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",

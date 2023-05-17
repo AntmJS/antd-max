@@ -6,4 +6,7 @@ export type ISearchParams = {
   month?: string
   cascader?: string
   creatTime?: string
+  images: string[]
+  checkbox: string
+  checkbox1: string
 }

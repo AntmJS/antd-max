@@ -7,7 +7,7 @@
 ### 引用
 
 ```tsx
-import { ButtonAsync } from '@antmjs/antd-max'
+import { ButtonAsync } from 'antd-max'
 ```
 
 ### 基本使用

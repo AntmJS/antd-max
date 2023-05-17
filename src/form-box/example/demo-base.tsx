@@ -1,15 +1,18 @@
-import FormMax from '../index'
+import FormBox from '../index'
 import { ISearchParams } from './demo-types'
 
 export default function Index() {
+  const [form] = FormBox.useForm()
+
   return (
-    <FormMax<ISearchParams>
+    <FormBox<ISearchParams>
       queryInit
+      form={form}
       actions={[
         {
           type: 'default',
           children: '重置',
-          fType: 'reset',
+          actionType: 'reset',
         },
         {
           type: 'primary',

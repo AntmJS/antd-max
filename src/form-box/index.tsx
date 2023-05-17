@@ -1,19 +1,9 @@
-import {
-  useCallback,
-  useState,
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
-} from 'react'
-import { Form, Col, Row, FormInstance } from 'antd'
-import { queryToObj, objToQuery } from '../utils/query'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useCallback, useState, useEffect } from 'react'
+import { Form, Col, Row } from 'antd'
+import { queryToObj } from '../utils/query'
 import ButtonAsync from '../button-async'
-import {
-  IFormMaxProps,
-  IFormMaxItemProps,
-  IRegisterFormParams,
-  IRegisterForm,
-} from './types'
+import { IFormBoxProps, IFormBoxItemProps, IRegisterFormParams } from './types'
 import { transformValueByType } from './utils'
 import { formComponents, resiterComponent, showComponents } from './register'
 
@@ -22,19 +12,9 @@ const FormItem = Form.Item
 
 let initIndex = 0
 
-interface IFormMax {
-  <T>(props: IFormMaxProps<T>): JSX.Element
-  resiterComponent: IRegisterForm
-  showComponents: () => Record<string, IRegisterFormParams>
-}
-
-function FormMax_<T>(
-  props: IFormMaxProps<T>,
-  ref?: React.ForwardedRef<FormInstance>,
-) {
-  const { config, defaultValues, actions, queryInit, col } = props
+function FormBox<T>(props: IFormBoxProps<T>) {
+  const { config, defaultValues, actions, queryInit, col, form } = props
   const defaultCol = col
-  const [form] = Form.useForm()
   const [componentIndex] = useState(initIndex++)
 
   useEffect(() => {
@@ -49,15 +29,27 @@ function FormMax_<T>(
   }, [])
 
   const renderItem = useCallback(
-    (item: IFormMaxItemProps<Record<string, any>>, index) => {
+    (item: IFormBoxItemProps<Record<string, any>>, index: any) => {
       const { type, key, label, props, col } = item
       const componentInfo = formComponents[type] as IRegisterFormParams
 
-      const { component, transformProps } = componentInfo
+      const {
+        component,
+        transformProps,
+        transformDefaultValue,
+        transformValue,
+        ...formItemProps
+      } = componentInfo
       const Component = component
       const propsNew = transformProps?.(props || {}, {
         label,
       })
+
+      console.info(
+        `${clsPrefix}-form-col${index}_${componentIndex}_${
+          Array.isArray(key) ? key.join('_') : key
+        }`,
+      )
 
       return (
         <Col
@@ -66,12 +58,12 @@ function FormMax_<T>(
           md={24}
           sm={24}
           xs={24}
-          key={`${clsPrefix}-form-col${index}-${componentIndex}@${
+          key={`${clsPrefix}-form-col${index}_${componentIndex}_${
             Array.isArray(key) ? key.join('_') : key
           }`}
           style={{ marginBottom: '24px' }}
         >
-          <FormItem label={label} name={key} {...componentInfo}>
+          <FormItem label={label} name={key} {...formItemProps}>
             <Component {...propsNew} />
           </FormItem>
         </Col>
@@ -103,23 +95,15 @@ function FormMax_<T>(
   }, [config, form])
 
   const handleAction = useCallback(
-    (it) => {
+    (item) => {
       const vs = getAllValues()
-      if (it.fType === 'query') {
-        const s = objToQuery(vs)
-        window.location.href = window.location.href + '?' + s
-      }
-      if (it.fType === 'reset') {
+      if (item.actionType === 'reset') {
         form.resetFields()
       }
-      return it.onClick?.(getAllValues())
+      return item.onClick?.(vs)
     },
     [form, getAllValues],
   )
-
-  useImperativeHandle(ref, function () {
-    return { ...form }
-  })
 
   const _defaultValues = useCallback(() => {
     return transformValueByType(defaultValues || {}, config, formComponents)
@@ -131,8 +115,6 @@ function FormMax_<T>(
       className={`${clsPrefix}-form-max`}
       layout="inline"
       form={form}
-      labelCol={{ xl: 7 }}
-      wrapperCol={{ xl: 17 }}
     >
       <Row style={{ width: '100%' }}>
         {config.map((it, index) => {
@@ -141,24 +123,25 @@ function FormMax_<T>(
       </Row>
       <Row style={{ width: '100%' }}>
         <Col span={24} className={`${clsPrefix}-form-max-btns`}>
-          {actions?.map((act, index) => (
-            <ButtonAsync
-              {...act}
-              className={`${clsPrefix}-form-max-btn ${act.className || ''}`}
-              key={`${clsPrefix}-btn${componentIndex}@${index}`}
-              onClick={() => handleAction(act)}
-            />
-          ))}
+          {actions?.map((act, index) => {
+            const { actionType, ...oprops } = act
+            return (
+              <ButtonAsync
+                {...oprops}
+                className={`${clsPrefix}-form-max-btn ${act.className || ''}`}
+                key={`${clsPrefix}-btn_${componentIndex}_${index}`}
+                onClick={() => handleAction(act)}
+              />
+            )
+          })}
         </Col>
       </Row>
     </Form>
   )
 }
 
-// @ts-ignore
-const FormMax = forwardRef(FormMax_) as IFormMax
+FormBox['resiterComponent'] = resiterComponent
+FormBox['showComponents'] = showComponents
+FormBox['useForm'] = Form.useForm
 
-FormMax['resiterComponent'] = resiterComponent
-FormMax['showComponents'] = showComponents
-
-export default FormMax
+export default FormBox

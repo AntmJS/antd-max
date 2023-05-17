@@ -7,7 +7,7 @@
 ### 引入
 
 ```js
-import { Sku } from '@antmjs/antd-max'
+import { Sku } from 'antd-max'
 ```
 
 ### 基本用法

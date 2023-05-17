@@ -1,5 +1,5 @@
 import type { IbaseProps } from '../../types/common'
-import type { ButtonProps, FormItemProps } from 'antd'
+import type { ButtonProps, FormInstance, FormItemProps, InputProps } from 'antd'
 
 export type InternalType =
   | 'timePicker'
@@ -10,7 +10,7 @@ export type InternalType =
   | 'input'
   | 'select'
 
-export interface IFormMaxItemProps<T> extends FormItemProps {
+export interface IFormBoxItemProps<T> extends FormItemProps {
   type: internalType
   props?: Record<string, any>
   key: keyof T | Array<string | number>
@@ -20,16 +20,17 @@ export interface IFormMaxItemProps<T> extends FormItemProps {
 
 interface ButtonProps_<T> extends ButtonProps {
   onClick?: (result: T) => void
-  fType?: 'reset'
+  actionType?: 'reset'
   async?: boolean
 }
 
-export interface IFormMaxProps<T> extends IbaseProps {
+export interface IFormBoxProps<T> extends IbaseProps {
   queryInit?: boolean
-  config: IFormMaxItemProps<T>[]
+  config: IFormBoxItemProps<T>[]
   actions?: ButtonProps_<T>[]
   defaultValues?: T
   col?: number
+  form: FormInstance
 }
 
 export interface IRegisterFormParams extends FormItemProps {
@@ -45,10 +46,11 @@ export interface IRegisterFormParams extends FormItemProps {
 
 export type IRegisterForm = (params: IRegisterFormParams) => void
 
-declare interface FormMax {
-  <T>(props: IFormMaxProps<T>): JSX.Element
+declare interface FormBox {
+  <T>(props: IFormBoxProps<T>): JSX.Element
   resiterComponent: IRegisterForm
   showComponents: () => Record<string, IRegisterFormParams>
+  useForm<Values = any>(form?: FormInstance<Values>): [FormInstance<Values>]
 }
 
-export { FormMax }
+export { FormBox }

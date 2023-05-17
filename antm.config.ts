@@ -61,7 +61,7 @@ function getMenus(): IDocMenuNavs {
       items: [
         {
           path: 'introduce',
-          title: 'introduce 介绍',
+          title: '介绍',
         },
       ],
     },
@@ -71,6 +71,10 @@ function getMenus(): IDocMenuNavs {
         {
           path: 'button-async',
           title: 'button-async 异步按钮',
+        },
+        {
+          path: 'infinite-scroll',
+          title: 'infinite-scroll 无限滚动',
         },
       ],
     },

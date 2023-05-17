@@ -135,8 +135,8 @@ const defaultCompItems: IRegisterFormParams[] = [
         placeholder: `请输入${itemProps['label'] || ''}`,
         ...props,
         children: (props['options'] || []).map((item) => (
-          <Option key={item.key} value={item.value}>
-            <Tooltip title={item.value}>{item.value}</Tooltip>
+          <Option key={`${item.value}_${item.label}`} value={item.value}>
+            <Tooltip title={item.label}>{item.label}</Tooltip>
           </Option>
         )),
       }
@@ -151,7 +151,7 @@ defaultCompItems.forEach((item) => {
 export function resiterComponent(params: IRegisterFormParams) {
   const { type } = params
   if (formComponents[type]) {
-    console.warn(`FormMax: Overwrite existing component ${type}`)
+    console.warn(`FormBox: Overwrite existing component ${type}`)
   }
   formComponents[type] = params
 }

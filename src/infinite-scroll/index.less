@@ -1,0 +1,20 @@
+.van-infinite-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-loading,
+  &-complete,
+  &-error {
+    font-size: 14px;
+    padding: 24px 0;
+    text-align: center;
+  }
+
+  &-error {
+    .reload-btn {
+      padding-left: 18px;
+      text-align: center;
+    }
+  }
+}
