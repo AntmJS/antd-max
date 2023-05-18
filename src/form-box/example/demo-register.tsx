@@ -2,7 +2,7 @@ import ButtonAsync from '../../button-async/index'
 import FormBoxNew from './form-max-extra'
 import { ISearchParams } from './demo-types'
 
-const FormBox = FormBoxNew<ISearchParams>
+const FormBoxD = FormBoxNew<ISearchParams>
 
 export default function Index() {
   const [form] = FormBoxNew.useForm()
@@ -14,7 +14,7 @@ export default function Index() {
   return (
     <div>
       <span>表单模块1</span>
-      <FormBox
+      <FormBoxD
         form={form}
         config={[
           {
@@ -34,7 +34,7 @@ export default function Index() {
       />
       <span>表单模块2</span>
 
-      <FormBox
+      <FormBoxD
         form={form}
         config={[
           {

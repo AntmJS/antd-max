@@ -1,14 +1,14 @@
-import { Upload, Checkbox, Col } from 'antd'
-import { IFormBoxItemProps, IFormBoxProps, InternalType } from '../types'
+import type { CheckboxGroupProps } from 'antd/es/checkbox/index'
+import { Upload, Checkbox, Col, UploadProps } from 'antd'
+import { IFormBoxItemProps, IFormBoxProps, IMakeFormCompProps } from '../types'
 import FormBox from '../index'
 
-interface IFormBoxItemPropsNew<T> extends IFormBoxItemProps<T> {
-  type: InternalType | 'imageUploader' | 'checkbox'
-}
+export type IFormBoxItemPropsNew<T> =
+  | IFormBoxItemProps<T>
+  | IMakeFormCompProps<'checkbox', CheckboxGroupProps, T>
+  | IMakeFormCompProps<'imageUploader', UploadProps, T>
 
-interface IFormBoxPropsNew<T> extends IFormBoxProps<T> {
-  config: IFormBoxItemPropsNew<T>[]
-}
+export type IFormBoxPropsNew<T> = IFormBoxProps<T, IFormBoxItemPropsNew<T>>
 
 const normFile = (e: any) => {
   if (Array.isArray(e)) {
