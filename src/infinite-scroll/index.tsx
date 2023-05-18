@@ -8,7 +8,6 @@ import {
 } from 'react'
 import { Spin } from 'antd'
 import { InfiniteScrollProps, InfiniteScrollInstance } from './types'
-import './index.less'
 
 const clsPrefix = `van-infinite-scroll`
 type IStatus = 'loading' | 'complete' | 'error'

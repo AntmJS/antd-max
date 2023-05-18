@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { IbaseProps } from 'types/common'
+import { IbaseProps } from '../types/common'
 
 export interface InfiniteScrollProps extends IbaseProps {
   /**

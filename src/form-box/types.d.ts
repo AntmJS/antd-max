@@ -1,4 +1,4 @@
-import type { IbaseProps } from '../../types/common'
+import type { IbaseProps } from '../types/common'
 import type {
   ButtonProps,
   FormInstance,

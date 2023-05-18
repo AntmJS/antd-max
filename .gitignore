@@ -50,3 +50,4 @@ doc_build
 .webhooks.js
 es
 lib
+types

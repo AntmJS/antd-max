@@ -4,16 +4,16 @@
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "types": "./src/index.d.ts",
+  "types": "./types/index.d.ts",
   "scripts": {
     "eslint": "npx eslint -c eslint.config.js '**/*.{js,jsx,ts,tsx}' && npx tsc -p tsconfig.json --skipLibCheck",
     "stylelint": "npx stylelint --aei --config stylelint.config.js '**/*.{css,less}'",
     "prettier": "npx prettier --write '**/*.{js,jsx,ts,tsx,md,html,css,less}'",
     "prepare": "husky install",
     "start": "npx antm-doc-start",
-    "ghpage": "npx antm-doc-build && npx gh-pages -d doc_build",
-    "build": "npx antm-vantui-cli build",
-    "dts": "npx tsc src/index.d.ts"
+    "ghpage": "rm -rf doc_build & npx antm-doc-build && npx gh-pages -d doc_build",
+    "build": "npx antm-vantui-cli build && yarn dts",
+    "dts": "npx ts-node ./scripts/dts.ts"
   },
   "keywords": [
     "antmjs",
@@ -26,7 +26,7 @@
     "@antmjs/eslint": "^2.3.6",
     "@antmjs/stylelint": "^2.3.6",
     "@antmjs/types": "^2.3.6",
-    "@antmjs/vantui-cli": "^3.0.0",
+    "vantui-cli": "^0.0.1",
     "@antmjs/warning": "^2.3.6",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
@@ -38,6 +38,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "dayjs": "^1.11.7",
     "eslint": "8.12.0",
+    "fs-extra": "^11.1.1",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.1",
     "react-router-dom": "^6.11.1",

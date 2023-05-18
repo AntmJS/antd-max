@@ -1,11 +1,9 @@
 import { useEffect, useState, useCallback } from 'react'
-import classnames from 'classnames'
-import { theme } from 'antd'
+import { Button } from 'antd'
 import { SkuProps, IGoodItem } from './types'
 import { everyItemEqual } from './utils'
 
 const preCls = `antm-ui-sku`
-const { useToken } = theme
 
 export default function Sku(props: SkuProps) {
   const {
@@ -16,12 +14,9 @@ export default function Sku(props: SkuProps) {
     onChange,
     clickAttrDisable,
     itemRender,
-    disabledClassName = '',
-    activeClassName = '',
     itemDisable,
   } = props
   const [currentGoods, setCurrentGoods] = useState<IGoodItem>()
-  const { token } = useToken()
 
   useEffect(
     function () {
@@ -104,27 +99,17 @@ export default function Sku(props: SkuProps) {
                   ? false
                   : true
               return (
-                <div
+                <Button
                   key={`attr#${index}@${it.id}`}
+                  className={`${preCls}-attr`}
                   onClick={() => attrClick(canBuyGoodsItem, canBuy)}
-                  className={classnames({
-                    [`${preCls}-attr`]: true,
-                    [`${preCls}-attr-active ${activeClassName}`]:
-                      currentGoods?.skuIds.includes(it.id),
-                    [`${preCls}-attr-disable ${disabledClassName}`]: !canBuy,
-                  })}
-                  style={
-                    currentGoods?.skuIds.includes(it.id)
-                      ? {
-                          color: token.colorPrimary,
-                          background: `fade(${token.colorPrimary}, 10%)`,
-                          border: `1px solid ${token.colorPrimary}`,
-                        }
-                      : {}
+                  disabled={!canBuy}
+                  type={
+                    currentGoods?.skuIds.includes(it.id) ? 'primary' : 'default'
                   }
                 >
                   {itemRender ? itemRender(it) : it.name}
-                </div>
+                </Button>
               )
             })}
           </div>

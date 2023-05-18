@@ -14,7 +14,9 @@ import { Sku } from 'antd-max'
 
 - `sku.tsx`: 须要保证`items[xx].id`是唯一的
 
-- `goodsList.tsx`: `商品列表` 数据格式如下
+- `goodsList.tsx`: `商品列表` 数据格式
+
+组件案例
 
 ::: demo-base :::
 

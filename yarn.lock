@@ -227,43 +227,6 @@
   resolved "https://registry.npmjs.org/@antmjs/types/-/types-2.3.6.tgz"
   integrity sha512-tKNwpS9fcUDte3KloG5VLFlt28gf7wKia8Ptbv9KIFjXEDL955CpSAmX8n9QvUk8sKjdR5Bi0uTI08DAXzkFYw==
 
-"@antmjs/vantui-cli@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/@antmjs/vantui-cli/-/vantui-cli-3.0.0.tgz#b1c672d8a9f61213057bd6a650fb072955a4c178"
-  integrity sha512-ZsBGIU2Q5StR1hcoAzVwbCMWBoPgW4NPR6O/tw2JIP6wr6DPeJxZUXLVA7//H5BokRUYPumXk9yltRB+FUgE6Q==
-  dependencies:
-    "@antmjs/babel-preset" "2.3.3"
-    "@babel/core" "^7.16.0"
-    "@babel/plugin-transform-runtime" "^7.17.10"
-    "@babel/plugin-transform-typescript" "^7.16.8"
-    "@babel/preset-env" "^7.17.10"
-    "@babel/preset-typescript" "^7.16.0"
-    "@docsearch/css" "3.0.0-alpha.41"
-    "@docsearch/js" "3.0.0-alpha.41"
-    "@swc/core" "^1.3.35"
-    "@vant/markdown-vetur" "^2.2.0"
-    "@vant/touch-emulator" "^1.3.2"
-    autoprefixer "^10.4.7"
-    chalk "^5.0.1"
-    classnames "^2.3.1"
-    clean-css "^5.2.2"
-    commander "^8.3.0"
-    consola "^2.15.3"
-    conventional-changelog "^3.1.24"
-    execa "^5.1.1"
-    fast-glob "^3.2.7"
-    fs-extra "^10.1.0"
-    hash-sum "^2.0.0"
-    lodash-es "^4.17.21"
-    mini-css-extract-plugin "^2.6.0"
-    ora "^6.0.1"
-    postcss "^8.3.11"
-    postcss-load-config "^3.1.0"
-    postcss-loader "^6.2.1"
-    prettier "^2.7.1"
-    release-it "^14.11.6"
-    transliteration "^2.2.0"
-
 "@antmjs/warning@^2.3.6":
   version "2.3.6"
   resolved "https://registry.npmjs.org/@antmjs/warning/-/warning-2.3.6.tgz"
@@ -5314,6 +5277,15 @@ fs-extra@^10.0.0, fs-extra@^10.1.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
+fs-extra@^11.1.1:
+  version "11.1.1"
+  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-11.1.1.tgz#da69f7c39f3b002378b0954bb6ae7efdc0876e2d"
+  integrity sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^2.0.0"
+
 fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
@@ -10317,6 +10289,43 @@ value-or-promise@^1.0.11, value-or-promise@^1.0.12:
   version "1.0.12"
   resolved "https://registry.npmjs.org/value-or-promise/-/value-or-promise-1.0.12.tgz"
   integrity sha512-Z6Uz+TYwEqE7ZN50gwn+1LCVo9ZVrpxRPOhOLnncYkY1ZzOYtrX8Fwf/rFktZ8R5mJms6EZf5TqNOMeZmnPq9Q==
+
+vantui-cli@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/vantui-cli/-/vantui-cli-0.0.1.tgz#84bee41d9e78f82bacc304250b58ff8fb7a0530f"
+  integrity sha512-ZzJoLhOwgtzxIW2SWO/QHw6BH0w02nIzmc7l98HLFFoDoUc6n8WvO9entQWKh4jYykw82kh2pn7snKGA17yzjg==
+  dependencies:
+    "@antmjs/babel-preset" "2.3.3"
+    "@babel/core" "^7.16.0"
+    "@babel/plugin-transform-runtime" "^7.17.10"
+    "@babel/plugin-transform-typescript" "^7.16.8"
+    "@babel/preset-env" "^7.17.10"
+    "@babel/preset-typescript" "^7.16.0"
+    "@docsearch/css" "3.0.0-alpha.41"
+    "@docsearch/js" "3.0.0-alpha.41"
+    "@swc/core" "^1.3.35"
+    "@vant/markdown-vetur" "^2.2.0"
+    "@vant/touch-emulator" "^1.3.2"
+    autoprefixer "^10.4.7"
+    chalk "^5.0.1"
+    classnames "^2.3.1"
+    clean-css "^5.2.2"
+    commander "^8.3.0"
+    consola "^2.15.3"
+    conventional-changelog "^3.1.24"
+    execa "^5.1.1"
+    fast-glob "^3.2.7"
+    fs-extra "^10.1.0"
+    hash-sum "^2.0.0"
+    lodash-es "^4.17.21"
+    mini-css-extract-plugin "^2.6.0"
+    ora "^6.0.1"
+    postcss "^8.3.11"
+    postcss-load-config "^3.1.0"
+    postcss-loader "^6.2.1"
+    prettier "^2.7.1"
+    release-it "^14.11.6"
+    transliteration "^2.2.0"
 
 vary@~1.1.2:
   version "1.1.2"
