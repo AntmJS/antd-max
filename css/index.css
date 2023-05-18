@@ -881,14 +881,16 @@
 }
 .demo-code-wrapper .code-item pre,
 .demo-code-wrapper pre code {
-  background-color: #f3fff6 !important;
+  background-color: #0a391a !important;
+  color: #cfccccee;
 }
 .demo-code-tabs .code-tab-name-active {
   border-bottom: 3px solid var(--primary-color);
 }
 .demo-code-tabs {
-  background-color: #f3fff6 !important;
-  border-bottom: 2px solid #eeeeee;
+  background-color: #494949 !important;
+  border-bottom: none;
+  color: #ffffff;
 }
 .demo-code-wrapper .code-box {
   position: relative;
