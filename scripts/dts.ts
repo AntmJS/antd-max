@@ -2,7 +2,7 @@ import { join } from 'path'
 import { existsSync, mkdirSync, copy, removeSync } from 'fs-extra'
 
 const CWD = process.cwd()
-const TYPES = join(CWD, './types')
+const TYPES = join(CWD, './d-types')
 
 if (existsSync(TYPES)) {
   removeSync(TYPES)

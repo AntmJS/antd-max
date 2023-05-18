@@ -3018,10 +3018,10 @@ antd@^5.4.7:
     scroll-into-view-if-needed "^3.0.3"
     throttle-debounce "^5.0.0"
 
-antmjs-doc@^0.0.4-apha.6:
-  version "0.0.4-apha.6"
-  resolved "https://registry.npmjs.org/antmjs-doc/-/antmjs-doc-0.0.4-apha.6.tgz#8b54e9ef07ef4c27656570c5e1e10497502d6176"
-  integrity sha512-x/227hGriraE7O0s1xBndUl0h5HmSpHPPqu5qQjhK6KqvGGwPMDMdd2XlGWfxmzL71sG4icGx/hkdJJKQFNUfg==
+antmjs-doc@^0.0.4-alpha.9:
+  version "0.0.4-alpha.9"
+  resolved "https://registry.npmjs.org/antmjs-doc/-/antmjs-doc-0.0.4-alpha.9.tgz#352f8eead2fa9460619f4b5faf440f970ddb743e"
+  integrity sha512-4UCtn29ttjkruk0w75FXai5HceelVcUa+vwGICfjBBv3gIXJBJtM5OrXtLNvPxp61zqKhBgMoWDN7Zz1ZM1LuA==
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.21.0"
     "@babel/preset-typescript" "^7.21.4"
