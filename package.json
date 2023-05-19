@@ -1,6 +1,6 @@
 {
   "name": "antd-max",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -20,6 +20,14 @@
     "antd-max",
     "antd"
   ],
+  "homepage": "https://antmjs.github.io/antd-max/",
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/AntmJS/antd-max"
+  },
+  "bugs": {
+    "url": "https://github.com/AntmJS/antd-max/issues/new"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -32,7 +40,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "all-contributors-cli": "^6.20.0",
     "antd": "^5.4.7",
-    "antmjs-doc": "^0.0.4-alpha.9",
+    "antmjs-doc": "^0.0.4-alpha.10",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
