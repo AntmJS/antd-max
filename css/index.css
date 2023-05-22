@@ -450,6 +450,9 @@
 .demo-code-tabs .code-tab-name-active {
   border-bottom: 3px solid var(--primary-color);
 }
+.demo-code-show {
+  position: relative;
+}
 .code-box {
   /* stylelint-disable-next-line no-duplicate-selectors */
 }
@@ -918,6 +921,9 @@
 /* stylelint-disable selector-max-type */
 :root {
   --header-back-color: #4fc08d;
+}
+.demo-code-show {
+  position: relative;
 }
 .antm-ui-sku {
   width: auto;
