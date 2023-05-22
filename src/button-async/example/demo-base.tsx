@@ -1,6 +1,7 @@
 import ButtonAsync from '../index'
 
-export default function Index() {
+export default function Index(props) {
+  console.info(props)
   const handleClick = () => {
     return new Promise((resolve) => {
       setTimeout(() => {

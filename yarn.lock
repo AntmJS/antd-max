@@ -990,7 +990,7 @@
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.18.6"
 
-"@babel/plugin-transform-react-jsx@^7.18.6", "@babel/plugin-transform-react-jsx@^7.21.0":
+"@babel/plugin-transform-react-jsx@^7.18.6":
   version "7.21.5"
   resolved "https://registry.npmjs.org/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.21.5.tgz#bd98f3b429688243e4fa131fe1cbb2ef31ce6f38"
   integrity sha512-ELdlq61FpoEkHO6gFRpfj0kUgSwQTGoaEU8eMRoS8Dv3v6e7BjEAj5WMtIBRdHUeAioMhKP5HyxNzNnP+heKbA==
@@ -1202,7 +1202,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.18.6"
     "@babel/plugin-transform-react-pure-annotations" "^7.18.6"
 
-"@babel/preset-typescript@^7.14.5", "@babel/preset-typescript@^7.16.0", "@babel/preset-typescript@^7.21.4":
+"@babel/preset-typescript@^7.14.5", "@babel/preset-typescript@^7.16.0":
   version "7.21.5"
   resolved "https://registry.npmjs.org/@babel/preset-typescript/-/preset-typescript-7.21.5.tgz#68292c884b0e26070b4d66b202072d391358395f"
   integrity sha512-iqe3sETat5EOrORXiQ6rWfoOg2y68Cs75B9wNxdPW4kixJxh7aXQE1KPdWLDniC24T/6dSnguF33W9j/ZZQcmA==
@@ -3018,19 +3018,16 @@ antd@^5.4.7:
     scroll-into-view-if-needed "^3.0.3"
     throttle-debounce "^5.0.0"
 
-antmjs-doc@^0.0.4-alpha.10:
-  version "0.0.4-alpha.10"
-  resolved "https://registry.npmjs.org/antmjs-doc/-/antmjs-doc-0.0.4-alpha.10.tgz#635f93fd0d537b5830d1ed9a13175c2a46d1d087"
-  integrity sha512-ehUUzRxLFR3JAl6IwYC64g8KMU3p76XpNgbYZslRJ/lPzmRLls+l7gMkvNDCuxz22gsues8f5pMj6lyCtn2RcQ==
+antmjs-doc@^0.0.5-alpha.6:
+  version "0.0.5-alpha.6"
+  resolved "https://registry.npmjs.org/antmjs-doc/-/antmjs-doc-0.0.5-alpha.6.tgz#dccf5d3a2e7298eafef4ece8bbbee57c891ab138"
+  integrity sha512-p6EtzlG2f+EV1aiy0gjmT0VeV2pjJ8kjNdFC+xedmBbxKz71lYJLpxGlzfLNPbMcYsJhAREpmL06n0Z2MtNC4g==
   dependencies:
-    "@babel/plugin-transform-react-jsx" "^7.21.0"
-    "@babel/preset-typescript" "^7.21.4"
     "@swc/core" "^1.3.52"
     "@swc/wasm" "^1.3.52"
     "@types/react-dom" "^18.0.11"
     ast-to-markdown "^1.0.0"
     autoprefixer "^10.4.14"
-    babel-loader "^9.1.2"
     chokidar "^3.5.3"
     classnames "^2.3.2"
     css-loader "^6.7.3"
@@ -3048,6 +3045,7 @@ antmjs-doc@^0.0.4-alpha.10:
     react-dom "^18.2.0"
     react-hot-toast "^2.4.0"
     style-loader "^3.3.2"
+    swc-loader "^0.2.3"
     vue "^3.2.47"
     vue-loader "^17.1.0"
     webpack "^5.78.0"
@@ -3231,14 +3229,6 @@ available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
-
-babel-loader@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.npmjs.org/babel-loader/-/babel-loader-9.1.2.tgz"
-  integrity sha512-mN14niXW43tddohGl8HPu5yfQq70iUThvFL/4QzESA7GcZoC0eVOhvWdQ8+3UlSjaDE9MVtsW9mxDY07W7VpVA==
-  dependencies:
-    find-cache-dir "^3.3.2"
-    schema-utils "^4.0.0"
 
 babel-plugin-import@^1.13.3:
   version "1.13.6"
@@ -3794,11 +3784,6 @@ commitizen@^4.0.3, commitizen@^4.2.4:
     minimist "1.2.7"
     strip-bom "4.0.0"
     strip-json-comments "3.1.1"
-
-commondir@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz"
-  integrity sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==
 
 compare-func@^2.0.0:
   version "2.0.0"
@@ -5149,15 +5134,6 @@ finalhandler@1.2.0:
     statuses "2.0.1"
     unpipe "~1.0.0"
 
-find-cache-dir@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.npmjs.org/find-cache-dir/-/find-cache-dir-3.3.2.tgz"
-  integrity sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig==
-  dependencies:
-    commondir "^1.0.1"
-    make-dir "^3.0.2"
-    pkg-dir "^4.1.0"
-
 find-node-modules@^2.1.2:
   version "2.1.3"
   resolved "https://registry.npmjs.org/find-node-modules/-/find-node-modules-2.1.3.tgz"
@@ -5178,7 +5154,7 @@ find-up@^2.0.0:
   dependencies:
     locate-path "^2.0.0"
 
-find-up@^4.0.0, find-up@^4.1.0:
+find-up@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz"
   integrity sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw==
@@ -6982,7 +6958,7 @@ make-dir@^2.1.0:
     pify "^4.0.1"
     semver "^5.6.0"
 
-make-dir@^3.0.0, make-dir@^3.0.2:
+make-dir@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/make-dir/-/make-dir-3.1.0.tgz#415e967046b3a7f1d185277d84aa58203726a13f"
   integrity sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==
@@ -7889,13 +7865,6 @@ pify@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/pify/-/pify-5.0.0.tgz"
   integrity sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==
-
-pkg-dir@^4.1.0:
-  version "4.2.0"
-  resolved "https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.2.0.tgz"
-  integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
-  dependencies:
-    find-up "^4.0.0"
 
 please-upgrade-node@^3.2.0:
   version "3.2.0"
@@ -9763,6 +9732,11 @@ svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/svg-tags/-/svg-tags-1.0.0.tgz"
   integrity sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==
+
+swc-loader@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.npmjs.org/swc-loader/-/swc-loader-0.2.3.tgz#6792f1c2e4c9ae9bf9b933b3e010210e270c186d"
+  integrity sha512-D1p6XXURfSPleZZA/Lipb3A8pZ17fP4NObZvFCDjK/OKljroqDpPmsBdTraWhVBqUNpcWBQY1imWdoPScRlQ7A==
 
 synckit@^0.8.5:
   version "0.8.5"
