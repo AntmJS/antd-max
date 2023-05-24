@@ -41,7 +41,7 @@ import { FormBox } from 'antd-max'
 
 ### IFormBoxProps
 
-`FormBox<T>`组件的 props 类型说明如下
+`FormBox<T>`组件的 props，继承了[antd.FormProps](https://ant.design/components/form-cn#form)， 类型说明如下，
 
 | 参数          | 说明                                    | 类型                     |
 | ------------- | --------------------------------------- | ------------------------ |
