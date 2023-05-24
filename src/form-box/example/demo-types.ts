@@ -9,4 +9,5 @@ export type ISearchParams = {
   images: string[]
   checkbox: string
   checkbox1: string
+  phone?: number
 }

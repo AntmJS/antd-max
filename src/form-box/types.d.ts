@@ -1,4 +1,3 @@
-import type { IbaseProps } from '../types/common'
 import type {
   ButtonProps,
   FormInstance,
@@ -8,6 +7,7 @@ import type {
   TreeProps,
   SelectProps,
   CascaderProps,
+  FormProps,
 } from 'antd'
 import { MonthPickerProps, RangePickerProps } from 'antd/es/date-picker'
 
@@ -34,14 +34,16 @@ interface ButtonProps_<T> extends ButtonProps {
   async?: boolean
 }
 
-export type IFormBoxProps<T, CP = IFormBoxItemProps> = {
+export type IMakeFormBoxProps<T, CP> = {
   queryInit?: boolean
   config: CP[]
   actions?: ButtonProps_<T>[]
   defaultValues?: T
   col?: number
   form: FormInstance
-} & IbaseProps
+} & FormProps
+
+export type IFormBoxProps<T> = IMakeFormBoxProps<T, IFormBoxItemProps<T>>
 
 export interface IRegisterFormParams extends FormItemProps {
   type: string

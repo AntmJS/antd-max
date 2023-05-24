@@ -35,6 +35,10 @@ import { FormBox } from 'antd-max'
 - validateTrigger： 设置字段校验的时机
 - valuePropName： 子节点的值的属性，如 Switch 的是 'checked'。该属性为 getValueProps 的封装，自定义 getValueProps 后会失效
 
+### 数据校验
+
+::: demo-phone :::
+
 ### IFormBoxProps
 
 `FormBox<T>`组件的 props 类型说明如下

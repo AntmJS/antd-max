@@ -1,6 +1,10 @@
 import type { CheckboxGroupProps } from 'antd/es/checkbox/index'
 import { Upload, Checkbox, Col, UploadProps } from 'antd'
-import { IFormBoxItemProps, IFormBoxProps, IMakeFormCompProps } from '../types'
+import {
+  IFormBoxItemProps,
+  IMakeFormBoxProps,
+  IMakeFormCompProps,
+} from '../types'
 import FormBox from '../index'
 
 export type IFormBoxItemPropsNew<T> =
@@ -8,7 +12,7 @@ export type IFormBoxItemPropsNew<T> =
   | IMakeFormCompProps<'checkbox', CheckboxGroupProps, T>
   | IMakeFormCompProps<'imageUploader', UploadProps, T>
 
-export type IFormBoxPropsNew<T> = IFormBoxProps<T, IFormBoxItemPropsNew<T>>
+export type IFormBoxPropsNew<T> = IMakeFormBoxProps<T, IFormBoxItemPropsNew<T>>
 
 const normFile = (e: any) => {
   if (Array.isArray(e)) {
@@ -63,7 +67,7 @@ FormBox.resiterComponent({
 })
 
 export default function FormBox_<T>(props: IFormBoxPropsNew<T>) {
-  return <FormBox {...props} />
+  return <FormBox {...(props as any)} />
 }
 
 FormBox_['resiterComponent'] = FormBox.resiterComponent

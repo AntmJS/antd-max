@@ -51,7 +51,7 @@ const defaultCompItems: IRegisterFormParams[] = [
     transformProps: (props, itemProps) => {
       return {
         allowClear: true,
-        format: 'YYYY-MM-DD',
+        format: 'HH:mm:ss',
         placeholder: `请选择${itemProps['label'] || ''}`,
         ...props,
       }

@@ -13,7 +13,8 @@ const FormItem = Form.Item
 let initIndex = 0
 
 function FormBox<T>(props: IFormBoxProps<T>) {
-  const { config, defaultValues, actions, queryInit, col, form } = props
+  const { config, defaultValues, actions, queryInit, col, form, ...oprops } =
+    props
   const defaultCol = col
   const [componentIndex] = useState(initIndex++)
 
@@ -30,7 +31,7 @@ function FormBox<T>(props: IFormBoxProps<T>) {
 
   const renderItem = useCallback(
     (item: IFormBoxItemProps<Record<string, any>>, index: any) => {
-      const { type, key, label, props, col } = item
+      const { type, key, label, props, col, ...others } = item
       const componentInfo = formComponents[type] as IRegisterFormParams
 
       const {
@@ -45,12 +46,6 @@ function FormBox<T>(props: IFormBoxProps<T>) {
         label,
       })
 
-      console.info(
-        `${clsPrefix}-form-col${index}_${componentIndex}_${
-          Array.isArray(key) ? key.join('_') : key
-        }`,
-      )
-
       return (
         <Col
           xl={col || defaultCol || 8}
@@ -63,7 +58,11 @@ function FormBox<T>(props: IFormBoxProps<T>) {
           }`}
           style={{ marginBottom: '24px' }}
         >
-          <FormItem label={label} name={key} {...formItemProps}>
+          <FormItem
+            label={label}
+            name={key}
+            {...Object.assign(formItemProps, others)}
+          >
             <Component {...propsNew} />
           </FormItem>
         </Col>
@@ -100,7 +99,7 @@ function FormBox<T>(props: IFormBoxProps<T>) {
       if (item.actionType === 'reset') {
         form.resetFields()
       }
-      return item.onClick?.(vs)
+      item.onClick?.(vs)
     },
     [form, getAllValues],
   )
@@ -115,6 +114,7 @@ function FormBox<T>(props: IFormBoxProps<T>) {
       className={`${clsPrefix}-form-max`}
       layout="inline"
       form={form}
+      {...oprops}
     >
       <Row style={{ width: '100%' }}>
         {config.map((it, index) => {
