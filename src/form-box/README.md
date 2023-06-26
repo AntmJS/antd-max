@@ -83,6 +83,8 @@ interface ButtonProps_<T> extends ButtonProps {
 
 FormBox.`showComponents` 和 FormBox.`registerComponent` 的方法：
 
+> 尽量减少`transformDefaultValue`和 `transformValue`的使用，注册的组件的输入和输出最好本身就能满足业务的需求
+
 ```ts
 type IRegisterForm = (params: IRegisterFormParams) => void
 type showComponents = () => Record<string, IRegisterFormParams>
